@@ -1,20 +1,26 @@
 # Rust Iterator Lab: Slices & Closures Edition
 
-A dedicated testing ground for exploring Rust's functional programming features, iterators, and memory-safe collection manipulation. This project serves as a practical sandbox for understanding how Rust handles borrowed data and closures under the hood without sacrificing performance.
+A dedicated testing ground for exploring Rust's functional programming features, iterators, and memory-safe collection manipulation. This project serves as a practical sandbox for understanding how Rust handles borrowed data, closures, and ownership transfers under the hood without sacrificing performance.
 
 ## Status: Work in Progress
-Currently following the **Stephen Grider Rust Course**. This project serves as a "Proof of Work" for understanding the nuances of immutable vs. mutable iteration, closure execution, and slice referencing.
+Currently following the **Stephen Grider Rust Course**. This project serves as a "Proof of Work" for understanding the nuances of immutable vs. mutable iteration, closure execution, slice referencing, and safe optional handling.
 
 ## Engineering Highlights
-- **Functional Iteration**: Replacing traditional `for` loops with iterator chains (`.iter()`, `.map()`, `.for_each()`) to transform and consume collections idiomatically.
+- **Functional Iteration**: Replacing traditional `for` loops with iterator chains (`.iter()`, `.map()`, `.for_each()`, `.filter()`) to transform and consume collections idiomatically.
 - **Slice Referencing**: Passing partial, borrowed views of arrays (e.g., `&colors[1..3]`) to functions to minimize memory overhead and avoid unnecessary heap allocations.
 - **Mutable Borrowing**: Executing safe, in-place data modifications using `.iter_mut()` alongside standard library string methods (like `.truncate()`), strictly adhering to Rust's mutability and borrowing rules.
-- **Collection Transformations**: Leveraging the turbo-fish syntax (`::<>`) and `.collect::<Vec<String>>()` to gather iterator results into newly allocated data structures.
+- **Ownership & Consumption**: Leveraging `.into_iter()` to completely consume collections and transfer ownership of elements in memory.
+- **Safe Option Handling**: Utilizing `.find()` paired with `.map_or()` to safely unwrap `Option` types, providing default allocations to avoid null reference panics.
+- **Collection Transformations**: Leveraging the turbofish syntax (`::<>`) and `.collect()` to gather iterator results into newly allocated data structures, including complex nested vectors (`Vec<Vec<String>>`).
 
 ## Current Features
 - [x] **Partial View Printing**: Safely reading and displaying specific segments of a vector using immutable slice references.
 - [x] **Data Transformation**: Generating entirely new vectors of uppercase strings without mutating the source data.
 - [x] **In-Place Mutation**: Modifying existing string data directly within memory by iterating over mutable references.
+- [x] **Ownership Transfer**: Moving elements from one vector to another by consuming the source iterator.
+- [x] **Nested Iteration**: Exploding strings into multi-dimensional vectors using chained `.map()` calls.
+- [x] **Conditional Filtering**: Iterating through vectors of structs and filtering based on specific struct fields using auto-dereferencing.
+- [x] **Safe Fallbacks**: Searching for substrings and returning safe, allocated fallbacks when matches are not found.
 
 ## Development Environment
 Built and tested in a professional-grade systems environment:
