@@ -2,7 +2,7 @@
 
 A dedicated testing ground for exploring Rust's functional programming features, iterators, and memory-safe collection manipulation. This project serves as a practical sandbox for understanding how Rust handles borrowed data, closures, and ownership transfers under the hood without sacrificing performance.
 
-## Status: Work in Progress
+## Status: Done
 Currently following the **Stephen Grider Rust Course**. This project serves as a "Proof of Work" for understanding the nuances of immutable vs. mutable iteration, closure execution, slice referencing, and safe optional handling.
 
 ## Engineering Highlights
